@@ -73,7 +73,10 @@ class CustomerController extends Controller
     public function update(Request $request, $id)
     {
         $customer = Customer::find($id);
-        $customer->update($request->all());
+        $data = $request->all();
+
+        // $data = array('name' => $request->name, 'email' => $request->email, 'address' => $request->address);
+        $customer->update($data);
         return new CustomerResource($customer);
     }
 

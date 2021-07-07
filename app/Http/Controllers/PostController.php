@@ -130,8 +130,8 @@ class PostController extends Controller
                 'category' => $request->category
             ]);
 
-            $data = array('success' => true, 'message' => 'updated success', 'data' => $post);
             $headers = array('kepala' => 'kepalanya', 'isi' => 'isinya');
+            $data = array('success' => true, 'message' => 'updated success', 'data' => $post, 'headers' => $headers);
             return response()->json($data, 200, $headers);
         }
 
