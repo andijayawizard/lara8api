@@ -49,7 +49,10 @@ class CustomerController extends Controller
      */
     public function show($id)
     {
-        //
+        $customer = Customer::findOrFail($id);
+        $data = array('success' => true, 'message' => 'detail data customer', 'data' => $customer);
+        $headers = array('kepala' => 'kepalanya', 'isi' => 'isinya');
+        return response()->json($data, 200, $headers);
     }
 
     /**

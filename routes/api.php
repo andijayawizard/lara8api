@@ -32,5 +32,6 @@ Route::middleware(['auth:api'])->group(function () {
     Route::resource('products', ProductController::class);
 });
 
+// Route::resource('products', ProductController::class);
 Route::resource('customers', CustomerController::class);
 Route::resource('posts', PostController::class);
